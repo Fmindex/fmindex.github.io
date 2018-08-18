@@ -1,12 +1,11 @@
 <head><script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.6"> </script>
 <script>
-          async function loadModel(){ 
-              model = await tf.loadModel('web_model/model.json') 
-          } 
 
           async function run(){ 
+              model = await tf.loadModel('web_model/model.json') 
           	  const txt1 = parseInt(document.getElementById("txt1").value)
     		  const txt2 = parseInt(document.getElementById("txt2").value)
+    		  console.log([[txt1, txt2]], tf.zeros([1,2]))
               y = model.predict([[txt1, txt2]]) 
               document.getElementById('out').innerHTML = y.dataSync()[0] 
           } 
