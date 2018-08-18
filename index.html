@@ -6,10 +6,9 @@
           	  const txt1 = parseInt(document.getElementById("txt1").value)
     		      const txt2 = parseInt(document.getElementById("txt2").value)
     		       console.log([[txt1, txt2]], tf.zeros([1,2]))
-              await y = model.predict(tf.convert_to_tensor([[txt1, txt2]])) 
+              await y = model.predict(tf.tensor([[txt1, txt2]])) 
               document.getElementById('out').innerHTML = y.dataSync()[0] 
           } 
-          loadModel() 
 </script>
 </head> 
 <body>
